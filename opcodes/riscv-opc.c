@@ -3563,7 +3563,57 @@ const struct riscv_opcode riscv_opcodes[] =
 /**************************************     End of Gap9              ***************************************************/
 /***********************************************************************************************************************/
 
+/***********************************************************************************************************************/
+/**************************************           Xpspin           *****************************************************/
+/***********************************************************************************************************************/
 
+/* Post-increment and register-register loads */
+{"p.lb",          "Xpspin", "d,o(s)",     MATCH_LB,               MASK_LB,          match_opcode,   0},
+{"p.lb",          "Xpspin", "d,o(s!)",    MATCH_LBPOST,           MASK_LPOST,       match_opcode,   0},
+{"p.lb",          "Xpspin", "d,t(s)",     MATCH_LBRR,             MASK_LRR,         match_opcode,   0},
+{"p.lb",          "Xpspin", "d,t(s!)",    MATCH_LBRRPOST,         MASK_LRRPOST,     match_opcode,   0},
+{"p.lbu",         "Xpspin", "d,o(s)",     MATCH_LBU,              MASK_LBU,         match_opcode,   0},
+{"p.lbu",         "Xpspin", "d,o(s!)",    MATCH_LBUPOST,          MASK_LPOST,       match_opcode,   0},
+{"p.lbu",         "Xpspin", "d,t(s)",     MATCH_LBURR,            MASK_LRR,         match_opcode,   0},
+{"p.lbu",         "Xpspin", "d,t(s!)",    MATCH_LBURRPOST,        MASK_LRRPOST,     match_opcode,   0},
+{"p.lh",          "Xpspin", "d,o(s)",     MATCH_LH,               MASK_LH,          match_opcode,   0},
+{"p.lh",          "Xpspin", "d,o(s!)",    MATCH_LHPOST,           MASK_LPOST,       match_opcode,   0},
+{"p.lh",          "Xpspin", "d,t(s)",     MATCH_LHRR,             MASK_LRR,         match_opcode,   0},
+{"p.lh",          "Xpspin", "d,t(s!)",    MATCH_LHRRPOST,         MASK_LRRPOST,     match_opcode,   0},
+{"p.lhu",         "Xpspin", "d,o(s)",     MATCH_LHU,              MASK_LHU,         match_opcode,   0},
+{"p.lhu",         "Xpspin", "d,o(s!)",    MATCH_LHUPOST,          MASK_LPOST,       match_opcode,   0},
+{"p.lhu",         "Xpspin", "d,t(s)",     MATCH_LHURR,            MASK_LRR,         match_opcode,   0},
+{"p.lhu",         "Xpspin", "d,t(s!)",    MATCH_LHURRPOST,        MASK_LRRPOST,     match_opcode,   0},
+{"p.lw",          "Xpspin", "d,o(s)",     MATCH_LW,               MASK_LW,          match_opcode,   0},
+{"p.lw",          "Xpspin", "d,o(s!)",    MATCH_LWPOST,           MASK_LPOST,       match_opcode,   0},
+{"p.lw",          "Xpspin", "d,t(s)",     MATCH_LWRR,             MASK_LRR,         match_opcode,   0},
+{"p.lw",          "Xpspin", "d,t(s!)",    MATCH_LWRRPOST,         MASK_LRRPOST,     match_opcode,   0},
+
+/* Post-increment and register-register stores */
+{"p.sb",          "Xpspin", "t,q(s)",     MATCH_SB,               MASK_SB,          match_opcode,   0},
+{"p.sb",          "Xpspin", "t,q(s!)",    MATCH_SBPOST,           MASK_SPOST,       match_opcode,   0},
+{"p.sb",          "Xpspin", "t,d(s)",     MATCH_SBRR,             MASK_PALU,        match_opcode,   0},
+{"p.sb",          "Xpspin", "t,d(s!)",    MATCH_SBRRPOST,         MASK_PALU,        match_opcode,   0},
+{"p.sh",          "Xpspin", "t,q(s)",     MATCH_SH,               MASK_SH,          match_opcode,   0},
+{"p.sh",          "Xpspin", "t,q(s!)",    MATCH_SHPOST,           MASK_SPOST,       match_opcode,   0},
+{"p.sh",          "Xpspin", "t,d(s)",     MATCH_SHRR,             MASK_PALU,        match_opcode,   0},
+{"p.sh",          "Xpspin", "t,d(s!)",    MATCH_SHRRPOST,         MASK_PALU,        match_opcode,   0},
+{"p.sw",          "Xpspin", "t,q(s)",     MATCH_SW,               MASK_SW,          match_opcode,   0},
+{"p.sw",          "Xpspin", "t,q(s!)",    MATCH_SWPOST,           MASK_SPOST,       match_opcode,   0},
+{"p.sw",          "Xpspin", "t,d(s)",     MATCH_SWRR,             MASK_PALU,        match_opcode,   0},
+{"p.sw",          "Xpspin", "t,d(s!)",    MATCH_SWRRPOST,         MASK_PALU,        match_opcode,   0},
+
+/* Hardware loops */
+{"lp.starti", 		"Xpspin", "di,b1",    	MATCH_HWLP_STARTI, 			MASK_HWLP_STARTI, match_opcode, 	0},
+{"lp.endi",   		"Xpspin", "di,b1",    	MATCH_HWLP_ENDI,   			MASK_HWLP_ENDI,   match_opcode, 	0},
+{"lp.count",  		"Xpspin", "di,s",     	MATCH_HWLP_COUNT,  			MASK_HWLP_COUNT,  match_opcode, 	0},
+{"lp.counti", 		"Xpspin", "di,ji",    	MATCH_HWLP_COUNTI, 			MASK_HWLP_COUNTI, match_opcode, 	0},
+{"lp.setup",  		"Xpspin", "di,s,b1",  	MATCH_HWLP_SETUP,  			MASK_HWLP_SETUP,  match_opcode, 	0},
+{"lp.setupi", 		"Xpspin", "di,ji,b2", 	MATCH_HWLP_SETUPI, 			MASK_HWLP_SETUPI, match_opcode, 	0},
+
+/***********************************************************************************************************************/
+/**************************************         end Xpspin          ****************************************************/
+/***********************************************************************************************************************/
 
 /* Terminate the list.  */
 {0, 0, 0, 0, 0, 0, 0}

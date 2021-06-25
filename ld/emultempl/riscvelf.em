@@ -425,6 +425,10 @@ static void ParsePulpArch(const char *arg)
                   	if (Pulp_Chip.processor == PULP_NONE || Pulp_Chip.processor == PULP_V0) Pulp_Chip.processor = PULP_V0;
                   	else einfo(_("%F -Xpulpv0: pulp architecture is already defined as %s"), PulpProcessorImage(Pulp_Chip.processor));
 			break;
+		case PULP_SPIN:
+                  	if (Pulp_Chip.processor == PULP_NONE || Pulp_Chip.processor == PULP_SPIN) Pulp_Chip.processor = PULP_SPIN;
+                  	else einfo(_("%F -Xpspin: pulp architecture is already defined as %s"), PulpProcessorImage(Pulp_Chip.processor));
+      		break;
 		case PULP_V1:
                   	if (Pulp_Chip.processor == PULP_NONE || Pulp_Chip.processor == PULP_V1) Pulp_Chip.processor = PULP_V1;
                   	else einfo(_("%F -Xpulpv1: pulp architecture is already defined as %s"), PulpProcessorImage(Pulp_Chip.processor));
