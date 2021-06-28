@@ -791,46 +791,46 @@
 /* PULP specific instructions */
 
 /* Pulpv1 and v2. post-increment loads */
-#define MASK_LPOST      0x707f
-#define MATCH_LBPOST    0x000b
-#define MATCH_LBUPOST   0x400b
-#define MATCH_LHPOST    0x100b
-#define MATCH_LHUPOST   0x500b
-#define MATCH_LWPOST    0x200b
+#define MASK_LPOST  	0x707f
+#define MATCH_LBPOST 	0x000b
+#define MATCH_LBUPOST 	0x400b
+#define MATCH_LHPOST 	0x300b
+#define MATCH_LHUPOST 	0x500b
+#define MATCH_LWPOST 	0x600b
 
 /* Pulpv1 and v2. register-register loads */
-#define MASK_LRR        0xfe00707f
-#define MATCH_LBRR      0x00007003
-#define MATCH_LBURR     0x40007003
-#define MATCH_LHRR      0x10007003
-#define MATCH_LHURR     0x50007003
-#define MATCH_LWRR      0x20007003
+#define MASK_LRR  	0xfe00707f
+#define MATCH_LBRR 	0x7003
+#define MATCH_LBURR 	0x40007003
+#define MATCH_LHRR 	0x10007003
+#define MATCH_LHURR 	0x50007003
+#define MATCH_LWRR 	0x20007003
 
 /* Pulpv1 and v2. register-register post-increment loads */
 #define MASK_LRRPOST    0xfe00707f
-#define MATCH_LBRRPOST  0x0000700b
+#define MATCH_LBRRPOST  0x700b
 #define MATCH_LBURRPOST 0x4000700b
 #define MATCH_LHRRPOST  0x1000700b
 #define MATCH_LHURRPOST 0x5000700b
 #define MATCH_LWRRPOST  0x2000700b
 
 /* Pulpv1 and v2. post-increment stores */
-#define MASK_SPOST     0x707f
-#define MATCH_SBPOST   0x002b
-#define MATCH_SHPOST   0x102b
-#define MATCH_SWPOST   0x202b
+#define MASK_SPOST   0x707f
+#define MATCH_SBPOST 0x2b
+#define MATCH_SHPOST 0x102b
+#define MATCH_SWPOST 0x202b
 
 /* Pulpv1 and v2. register-register stores */
-#define MASK_SRR       0xc0007fff
-#define MATCH_SBRR     0x00004023
-#define MATCH_SHRR     0x00005023
-#define MATCH_SWRR     0x00006023
+#define MASK_SRR  0xfe00707f
+#define MATCH_SBRR 0x4023
+#define MATCH_SHRR 0x5023
+#define MATCH_SWRR 0x6023
 
 /* Pulpv1 and v2. register-register post-increment stores */
-#define MASK_SRRPOST   0xc0007fff
-#define MATCH_SBRRPOST 0x0000402b
-#define MATCH_SHRRPOST 0x0000502b
-#define MATCH_SWRRPOST 0x0000602b
+#define MASK_SRRPOST   0xfe00707f
+#define MATCH_SBRRPOST 0x402b
+#define MATCH_SHRRPOST 0x502b
+#define MATCH_SWRRPOST 0x602b
 
 /* Pulpv1 and v2. additional ALU operations */
 #define MASK_PALU   0xfe00707f
@@ -881,6 +881,7 @@
 #define MATCH_BSETR	0x80004033
 
 /* Pulpv1 and v2. harware loops */
+/*
 #define MASK_HWLP_STARTI 0x000ff07f
 #define MASK_HWLP_ENDI   0x000ff07f
 #define MASK_HWLP_COUNT  0xfff0707f
@@ -894,6 +895,20 @@
 #define MATCH_HWLP_COUNTI 0x0307b
 #define MATCH_HWLP_SETUP  0x0407b
 #define MATCH_HWLP_SETUPI 0x0507b
+*/
+#define MASK_HWLP_STARTI  0xfff7f
+#define MASK_HWLP_ENDI    0xfff7f
+#define MASK_HWLP_COUNT   0xfff07f7f
+#define MASK_HWLP_COUNTI  0xfff7f
+#define MASK_HWLP_SETUP   0x7f7f
+#define MASK_HWLP_SETUPI  0x7f7f
+
+#define MATCH_HWLP_STARTI 0x77
+#define MATCH_HWLP_ENDI   0x1077
+#define MATCH_HWLP_COUNT  0x2077
+#define MATCH_HWLP_COUNTI 0x3077
+#define MATCH_HWLP_SETUP  0x4077
+#define MATCH_HWLP_SETUPI 0x5077
 
 /* Pulpv1. MAC */
 #define MASK_MAC      0xc000707f
