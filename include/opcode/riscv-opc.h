@@ -799,12 +799,12 @@
 #define MATCH_LWPOST 	0x600b
 
 /* Pulpv1 and v2. register-register loads */
-#define MASK_LRR  	0xfe00707f
-#define MATCH_LBRR 	0x7003
+#define MASK_LRR  	    0xfe00707f
+#define MATCH_LBRR 	    0x7003
 #define MATCH_LBURR 	0x40007003
-#define MATCH_LHRR 	0x10007003
+#define MATCH_LHRR 	    0x10007003
 #define MATCH_LHURR 	0x50007003
-#define MATCH_LWRR 	0x20007003
+#define MATCH_LWRR 	    0x20007003
 
 /* Pulpv1 and v2. register-register post-increment loads */
 #define MASK_LRRPOST    0xfe00707f
